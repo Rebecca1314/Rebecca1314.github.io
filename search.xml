@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>markdown说明</title>
+      <link href="/2020/06/21/markdown%E8%AF%B4%E6%98%8E/"/>
+      <url>/2020/06/21/markdown%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一、标题写法："><a href="#一、标题写法：" class="headerlink" title="一、标题写法："></a>一、标题写法：</h1><p>第一种方法：<br>1、在文本下面加上 等于号 = ，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。<br>2、在文本下面加上 下划线 - ，那么上方的文本就变成了中标题，同样的 下划线个数无限制。<br>3、要想输入=号，上面有文本而不让其转化为大标题，则需要在两者之间加一个空行。<br>另一种方法：（推荐这种方法；注意⚠️中间需要有一个空格）<br>关于标题还有等级表示法，分为六个等级，显示的文本大小依次减小。不同等级之间是以井号  #  的个数来标识的。一级标题有一个 #，二级标题有两个# ，以此类推。</p><h1 id="二、编辑基本语法"><a href="#二、编辑基本语法" class="headerlink" title="二、编辑基本语法"></a>二、编辑基本语法</h1><p>1、字体格式强调<br> 我们可以使用下面的方式给我们的文本添加强调的效果<br><em>强调</em>  (示例：斜体)<br> _强调_  (示例：斜体)<br><strong>加重强调</strong>  (示例：粗体)<br> <strong>加重强调</strong> (示例：粗体)<br><strong><em>特别强调</em></strong> (示例：粗斜体)<br><strong><em>特别强调</em></strong>  (示例：粗斜体)<br>2、代码<br><code>&lt;hello world&gt;</code><br>3、代码块高亮  </p><pre><code>@Overrideprotected void onDestroy() {    EventBus.getDefault().unregister(this);    super.onDestroy();}</code></pre><p>4、表格 （建议在表格前空一行，否则可能影响表格无法显示）</p><table><thead><tr><th>表头</th><th>表头</th><th>表头</th></tr></thead><tbody><tr><td> 单元格内容</td><td>单元格内容</td><td>单元格内容 </td></tr><tr><td> 单元格内容</td><td>单元格内容</td><td>单元格内容  </td></tr></tbody></table><p>5、其他引用<br>图片<br><img src="https://www.baidu.com/img/bd_logo1.png" alt="图片名称"><br>链接<br><a href="https://www.baidu.com/" target="_blank" rel="noopener">链接名称</a><br>6、列表 </p><ol><li>项目1  </li><li>项目2  </li><li>项目3  <ul><li>项目1 （一个<em>号会显示为一个黑点，注意⚠️有空格，否则直接显示为</em>项目1） </li><li>项目2   </li></ul></li></ol><p>7、换行（建议直接在前一行后面补两个空格）<br>直接回车不能换行，<br>可以在上一行文本后面补两个空格，<br>这样下一行的文本就换行了。<br>或者就是在两行文本直接加一个空行。<br>也能实现换行效果，不过这个行间距有点大。<br>8、引用</p><blockquote><p>第一行引用文字<br>参考链接：<br><a href="https://blog.csdn.net/wsmrzx/article/details/81478945?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">编写markdown文章教程</a></p></blockquote>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot部署教程</title>
+      <link href="/2020/06/21/page-one/"/>
+      <url>/2020/06/21/page-one/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1-jar包部署教程"><a href="#1-jar包部署教程" class="headerlink" title="1.jar包部署教程"></a>1.jar包部署教程</h1><p>   打jar包 先确认pom.xml文件中的<packaging>jar</packaging>的方式是jar包还是war包<br> 1.首先找到项目所在的根路径（与pom.xml同级的）<br> 2.命令行打jar包，切换到项目所在的根路径 然后运行 mvn clean package<br>   如果打包的没有问题的话，会在target文件下生成一个jar包，一般生成的jar包名为： 工程名-版本号-SNAPSHOT.jar<br> 3.将生产的jar包放到服务器上的的某个目录下，然后切换到这个目录下，<br>   运行命令：java -jar jar包的名字.jar<br> 4.想要程序一直执行的话执行命令 nohup java -jar jar包路径+jar包的名字.jar </p><h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><ul><li>Error: Unable to access jarfile data_center_api-0.0.1-SNAPSHOT.jar错误<pre><code>解决方法：路径不对，切换到改jar包所在的目录重新运行此命令</code></pre></li><li>如果报spring-xxx-xxx-0.0.1-SNAPSHOT.jar中没有主清单属性的话 <h2 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h2></li><li>在pom中添加一个SpringBoot的构建的插件，然后重新运行 mvn install即可。<pre><code>&lt;build&gt;&lt;plugins&gt;  &lt;plugin&gt;      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;      &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;  &lt;/plugin&gt;&lt;/plugins&gt;&lt;/build&gt;</code></pre>在运行mvn install的时候，自动生成这些主清单属性，运行java -jar xxx.jar时会根据主清单属性找到启动类，从而启动程序。</li></ul><p>参考链接：<br><a href="https://blog.csdn.net/zhang_cl_cn/article/details/82020630" target="_blank" rel="noopener">jar包部署教程</a><br><a href="https://blog.csdn.net/qq_33188180/article/details/79133478" target="_blank" rel="noopener">war包部署教程</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo 常见的命令</title>
       <link href="/2019/07/24/hello-world/"/>
       <url>/2019/07/24/hello-world/</url>
@@ -21,7 +47,7 @@
       <link href="/2019/05/05/jeecg%E6%A1%86%E6%9E%B6/"/>
       <url>/2019/05/05/jeecg%E6%A1%86%E6%9E%B6/</url>
       
-        <content type="html"><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><p>A: <em>开源</em><br>B: _免费_<br>C: <strong>快捷</strong></p><h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><h3 id="111"><a href="#111" class="headerlink" title="111"></a>111</h3>]]></content>
+        <content type="html"><![CDATA[<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><p>A: <em>开源</em><br>B: _免费_<br>C: <strong>快捷</strong></p><h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3>]]></content>
       
       
       
